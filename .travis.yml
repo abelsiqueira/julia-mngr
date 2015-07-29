@@ -1,0 +1,7 @@
+language: bash
+install: sudo make all
+script:
+  - echo -e "2\n2\n2\n1\n" | sudo julia-mngr install
+  - julia -e "exp(1)"
+  - julia-mngr info
+  - sudo julia-mngr uninstall

@@ -182,9 +182,6 @@ function download() {
   wget -q -c $nig_url -O julia-nightly.tar.gz
   rm -rf julia-nightly
   tar -zxf julia-nightly.tar.gz
-  warn ">"
-  ls
-  warn ">"
   nightly_ver=$(find . -maxdepth 1 -name "julia-[0-9a-f]*" | cut -f2 -d-)
   echo $nightly_ver
   mv julia-$nightly_ver julia-nightly
@@ -201,7 +198,7 @@ function uninstall() {
     SUDO=sudo
   fi
 
-  $SUDO rm -f $installdir/julia*
+  $SUDO rm -f $installdir/julia{,-release,-nightly}
   rm -f $CONFIG_FILE
 }
 
@@ -242,7 +239,7 @@ The available commands are
   install     Installs julia release and nightly versions
   select      Selects which version is the default
   uninstall   Uninstall all julia versions (not this manager)
-  info        Displays informations about your installation
+  info        Displays information about your installation
 "
   license
 }
@@ -274,7 +271,6 @@ Code at https://github.com/abelsiqueira/julia-mngr"
 }
 
 # Start of the script
-read_config
 
 case $1 in
   install)   install;;
