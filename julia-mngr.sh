@@ -242,7 +242,9 @@ The available commands are
   install     Installs julia release and nightly versions
   select      Selects which version is the default
   uninstall   Uninstall all julia versions (not this manager)
-  info        Display informations about your installation"
+  info        Displays informations about your installation
+"
+  license
 }
 
 # Info
@@ -258,7 +260,17 @@ function info() {
   msg "  Julia nightly hash: $nightly_ver"
   msg "  Julia installed at $installdir:"
   find $installdir -name "julia*" | while read i; do msg "  ->$i"; done
-  msg "  Julia links to $julia"
+  msg "  Julia links to $julia
+"
+  license
+}
+
+# License
+function license() {
+  msg "Copyright © 2015 Abel Soares Siqueira
+
+Released under the GNU Public License v3
+Code at https://github.com/abelsiqueira/julia-mngr"
 }
 
 # Start of the script
