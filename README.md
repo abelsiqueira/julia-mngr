@@ -1,5 +1,8 @@
 # Julia Installer
 
+[![Build
+Status](https://travis-ci.org/abelsiqueira/julia-mngr.svg?branch=master)](https://travis-ci.org/abelsiqueira/julia-mngr)
+
 This tool enables the installation of
 [julia](http://julialang.org/) for generic linux.
 This installs both versions, enabling the selection of one or another.
