@@ -4,7 +4,7 @@
 CONFIG_FILE=~/.julia-mngr.config
 URL=http://julialang.org/downloads/
 if [ -t 1 ]; then
-  ncolors=$(tput colors) 
+  ncolors=$(tput colors)
   if [ -n "$ncolors" -a $ncolors -ge 8 ]; then
     RED="\033[0;31m"
     GREEN="\033[0;32m"
