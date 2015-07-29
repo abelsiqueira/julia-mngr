@@ -246,6 +246,7 @@ The available commands are
 
 # Info
 function info() {
+  read_config
   msg "Julia Manager"
   msg "  Your chosen architecture: $arch"
   msg "  Working directory: $workdir"
