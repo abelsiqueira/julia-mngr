@@ -212,7 +212,7 @@ function link_julia() {
     SUDO=sudo
   fi
 
-  $SUDO rm -f $installdir/julia*
+  $SUDO rm -f $installdir/julia{,-release,-nightly}
   $SUDO ln -s $workdir/julia-release/bin/julia $installdir/julia-release
   $SUDO ln -s $workdir/julia-nightly/bin/julia $installdir/julia-nightly
   $SUDO ln -s $installdir/$julia $installdir/julia
