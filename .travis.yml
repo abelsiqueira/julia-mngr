@@ -1,5 +1,5 @@
 language: bash
-install: sudo make all
+install: sudo make
 script:
   - echo -e "2\n2\n2\n1\n" | sudo julia-mngr install
   - julia -e "exp(1)"
