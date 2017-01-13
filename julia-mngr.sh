@@ -27,7 +27,8 @@ function assert() {
 }
 
 function issue() {
-  warn "Something went wrong, please open an issue"
+  warn "Something went wrong, please open an issue on"
+  warn "https://github.com/abelsiqueira/julia-mngr"
 }
 
 # Creates the configuration file
@@ -151,13 +152,13 @@ function download() {
   msg "Fetching downloads page"
   wget -q $URL -O $down_file
 
-  regex_rel="https:.*amazona.*linux.*$arch.*gz"
-  regex_nig="https:.*status.*linux.*[_8]$arch"
+  regex_rel="https:.*amazona.*linux/x$arch.*gz[^.]"
+  regex_nig="https:.*status.*linux.*[_6]$arch"
   match=0
   while read line
   do
     if [[ $line =~ $regex_rel ]]; then
-      rel_url=${BASH_REMATCH}
+      rel_url=${BASH_REMATCH%?}
       match=$(($match+1))
     elif [[ $line =~ $regex_nig ]]; then
       nig_url=${BASH_REMATCH}
@@ -265,7 +266,7 @@ function info() {
 
 # License
 function license() {
-  msg "Copyright © 2015 Abel Soares Siqueira
+  msg "Copyright © 2015-2017 Abel Soares Siqueira
 
 Released under the GNU Public License v3
 Code at https://github.com/abelsiqueira/julia-mngr"
