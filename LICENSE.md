@@ -1,5 +1,7 @@
 # Julia Manager - julia-mngr
-Copyright 2015 - Abel Soares Siqueira
+
+Copyright 2015-2017 - Abel Soares Siqueira
+
 >                     GNU GENERAL PUBLIC LICENSE
 >                        Version 3, 29 June 2007
 >
